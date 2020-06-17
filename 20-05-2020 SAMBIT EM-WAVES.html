@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<!-- <div style="background-image: url('https://cdn.hipwallpaper.com/i/46/44/Mb3qDc.jpg');"> -->
+<head>
+	<title>Plane wave at media interface: SOLVER</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+	<div class="alert alert-danger" role="alert">
+		<h1><center><strong>PLANE WAVE AT MEDIA INTERFACE - SOLVER</strong></center></h1>
+		<h4><center>(Created By: SAMBIT KUMAR MISHRA)</center></h4>	
+	</div>
+
+<body>
+	<div class="alert alert-info" role="alert">
+	  If you are new or need help on this topic, Please visit <a href="https://www.youtube.com/watch?v=0OwmYAljz4A&list=PL0925FD10648D664E" class="alert-link"> Video Tutorials on EM Waves - R.K.Shevgaonkar</a>
+	</div>
+
+	<div class="alert alert-dark" role="alert">
+	  Go through the assumptions and sign conventions thoroughly. For suggestions/comments please contact the <a href="https://www.linkedin.com/in/sambit-kumar-mishra-773a93171/" class="alert-link">Developer</a>
+	</div>
+
+<div>
+	<div class="alert alert-primary" role="alert">
+	  	<h3>
+			<strong>ENTER THE DETAILS OF THE INCIDENT FIELD WAVE</strong><br>
+		</h3>
+	</div>
+	
+	<div class='jumbotron'>
+	<form>
+		<strong>Enter the values of real and complex coefficients of Eₒ</strong><br>
+		<label>a=</label>
+		<input type="number" step="0.01" name="number" placeholder="0.00" required="">
+		<label>b=</label>
+		<input type="number" step="0.01" name="number" placeholder="0.00" required="">
+		<label>c=</label>
+		<input type="number" step="0.01" name="number" placeholder="0.00" required="">
+		<label>d=</label>
+		<input type="number" step="0.01" name="number" placeholder="0.00" required="">
+		<label>r=</label>
+		<input type="number" step="0.01" name="number" placeholder="0.00" required="">
+		<label>s=</label>
+		<input type="number" step="0.01" name="number" placeholder="0.00" required=""><br>
+
+		<strong>Enter the values of angles(in radians) made by the wave wrt different axes</strong><br>
+		<label>φx=</label>
+		<input type="number" step="0.01" name="number" placeholder="0.00" required="">
+		<label>φy=</label>
+		<input type="number" step="0.01" name="number" placeholder="0.00" required="">
+		<label>φz=</label>
+		<input type="number" step="0.01" name="number" placeholder="0.00" required=""><br>
+
+		<strong>Enter the values of permittivity and permeability of medium 1 and medium 2</strong><br>
+		<label>μ1=</label>
+		<input type="number" step="0.01" name="number" placeholder="0.00" required="">
+		<label>μ2=</label>
+		<input type="number" step="0.01" name="number" placeholder="0.00" required="">
+		<label>ϵ1=</label>
+		<input type="number" step="0.01" name="number" placeholder="0.00" required="">
+		<label>ϵ2=</label>
+		<input type="number" step="0.01" name="number" placeholder="0.00" required=""><br>
+
+		<strong>Select the plane of incidence</strong><br>
+		<label>XY</label>
+		<input type="radio" name="POI" required="">
+		<label>YZ</label>
+		<input type="radio" name="POI" required="">
+		<label>XZ</label>
+		<input type="radio" name="POI" required=""> <br>
+
+		<strong>Enter the value of incident angle of wave wrt normal to the plane of incidence</strong><br>
+		<label>φi=</label>
+		<input type="number" step="0.01" name="number" placeholder="0.00" required=""><br>
+
+		<strong>Select the dielectric plane</strong><br>
+		<label>XY</label>
+		<input type="radio" name="POD" required="">
+		<label>YZ</label>
+		<input type="radio" name="POD" required="">
+		<label>XZ</label>
+		<input type="radio" name="POD" required=""> <br><br>
+
+
+	<div class="alert alert-dark" role="alert">
+	  	<label>I confirm, that the input values are strictly according to the mentioned assumptions and sign conventions.</label>
+		<input type="checkbox" name="checkbox"><br>
+	</div>
+		
+		<button type="button" class="btn btn-success">SOLVE</button>
+
+	</form>
+	</div>
+</div>
+
+	<img src="https://i.pinimg.com/originals/dc/58/2d/dc582d385eb1eb018ea66ce42232ae1e.jpg" class="rounded float-right" alt="EM Wave Figure">
+
+	<div class="jumbotron">
+		<h4><strong>ASSUMPTIONS</strong></h4>
+		<ul>
+			<li>Assume that both of the semi-infinite regions are either vaccuum or perfect/ideal dielectric (i.e. conductivity, σ = 0)</li> 
+			<li>We will assume that the coordinate axes are aligned along the interface and the wave is assumed to travel at an angle wrt media interface</li> 
+		<!-- 	<li>We will assume that the incoming field vector moves along z-axis</li>  -->
+			<li>If depicted on paper the x-z plane will lie on the paper whereas the y-axis will be along the normal to the plane of paper</li> 
+			<li>Assume the plane of interface to be along x-y plane and normal to the plane is z-axis. Plane x-y cuts z-axis at z=0.</li> 
+			<li>Assume that the media are isotropic in their respective semi-infinite region</li> 
+			<li>Value of all angles and phase are in radians</li>
+			<li>Assume that polarisation is either parallel or perpendicular</li>
+		</ul>
+		
+	</div>
+
+	<div class="jumbotron">	
+		Every plane wave in an arbitrary direction can be written as <mark>F = Fₒexp(-j.K.β)</mark><br>
+		This equation can be generalised as:<br>
+
+		<strong><mark>E = [(a+jb)xˆ+ (c+jd)yˆ+ (r+js)zˆ]exp[-j.β.(Xcos(φx)+Ycos(φy)+Zcos(φz))]</mark></strong><br><br>
+
+		where, <br>
+		j = complex imaginary quantity analogous to i<br>
+		a,c,r = real coefficients <br>
+		b,d,s = complex coefficients <br>
+		xˆ,yˆ,zˆ = unit vectors in x, y, z axes respectively<br>
+		Eₒ = [(a+jb)xˆ+ (c+jd)yˆ+ (r+js)zˆ]<br>
+		β = phase constant of the wave<br>
+		k = (Xcos(φx)+Ycos(φy)+Zcos(φz)), the dot product of normal vector and displacement vector from the origin<br>
+		φx = Angle made by the incident wave wrt X-Axis<br>
+		φy = Angle made by the incident wave wrt Y-Axis<br>
+		φz = Angle made by the incident wave wrt Z-Axis<br><br>
+	</div>
+
+
+</body>
+</html>
